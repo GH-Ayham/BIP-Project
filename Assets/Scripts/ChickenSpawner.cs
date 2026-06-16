@@ -21,7 +21,7 @@ public class ChickenSpawner : MonoBehaviour
     [SerializeField] private float spawnInterval = 4f;
     [SerializeField] private int maxActiveChickens = 5;
     [SerializeField] private int chickenPoints = 10;
-    [SerializeField] private Vector3 chickenScale = new Vector3(0.15f, 0.15f, 0.15f);
+    [SerializeField, Range(0.0001f, 0.01f)] private float chickenScale = 0.1f;
 
     [Header("Speed Scaling")]
     [Tooltip("Speed boost added per catch (0.15 = +15% per catch, reaches 5x at ~27 catches).")]
@@ -92,7 +92,7 @@ public class ChickenSpawner : MonoBehaviour
             ? Instantiate(chickenPrefab, position, Quaternion.identity)
             : CreatePlaceholderChicken(position);
 
-        chickenObj.transform.localScale = chickenScale;
+        chickenObj.transform.localScale = Vector3.one * chickenScale;
 
         var chicken = chickenObj.GetComponent<ChickenBehaviour>();
         if (chicken == null)
