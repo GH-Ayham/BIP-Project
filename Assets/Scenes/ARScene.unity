@@ -300,6 +300,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac98af0dbf0f94936bff12307de3a72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaceObjectOnPlane
+  raycastManager: {fileID: 0}
+  prefabToPlace: {fileID: 0}
+  alignVisualBottomToPlane: 1
+  showDebugText: 1
+  addBlobShadow: 1
+  shadowSize: 0.65
+  shadowOpacity: 0.68
 --- !u!1 &150719610
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +803,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &773190229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773190231}
+  - component: {fileID: 773190230}
+  m_Layer: 0
+  m_Name: ChickenSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &773190230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773190229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d1aef8824124400baf3517e199d7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChickenSpawner
+  chickenPrefab: {fileID: 4514201221018379035, guid: 4b041ffb958c2664695291f498becff2, type: 3}
+  planeManager: {fileID: 32534271}
+  arCamera: {fileID: 150719617}
+  playerStats: {fileID: 1964602098}
+  spawnInterval: 4
+  maxActiveChickens: 5
+  chickenPoints: 10
+  chickenScale: 0.00075
+  speedIncrementPerCatch: 0.058
+  maxSpeedMultiplier: 5
+  catchSound: {fileID: 8300000, guid: c99932366d8334c26b0ef4dd2e731ad0, type: 3}
+  smokeSize: 20.91
+  smokeSpeed: 50
+  smokeCount: 12
+  smokeLifetime: 0.6
+  smokeCloudRadius: 2.042
+  starsSize: 4
+  starsSpeed: 90
+  starsCount: 8
+  starsLifetime: 0.4
+--- !u!4 &773190231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773190229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 970.9325, y: 604.58673, z: -3.75989}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,3 +1312,4 @@ SceneRoots:
   - {fileID: 104396665}
   - {fileID: 1964602099}
   - {fileID: 543580025}
+  - {fileID: 773190231}
